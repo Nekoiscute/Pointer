@@ -1,0 +1,53 @@
+echo "# Pointer" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:Nekoiscute/Pointer.git
+git push -u origin master
+
+#include <iostream>
+
+using namespace std;
+
+void potion(int ingredient);
+
+void potionRef(int& ingredient);
+
+void potionPointer(int* ingredient);
+
+
+void main()
+{
+	//The point of this assignment is to understand pointers
+	cout << "\n\n\t ***The Address Book ***\n\n";
+	cout << "\nOkay young one, we will now learn about the addresses of the ingredients needed to make potions.";
+	cout << "\nYou will be getting ingredients from their address and placing them in their required bottles." << endl;
+
+	int flask = 5;
+	
+	potion(flask);
+	cout << "\nThe amount of flasks you will be using is " << flask << "." << endl;
+
+	potionRef(flask);
+	cout << "\nThe number of correct potions you need to make are " << flask << "." << endl;
+
+	potionPointer(&flask);
+	cout << "\nA perfect score is if you make " << flask << " potions perfectly." << endl;
+
+	
+}
+
+void potion(int ingredient)
+{
+
+	ingredient = 3;
+}
+
+void potionRef(int& ingredient)
+{
+	ingredient = 3;
+}
+
+void potionPointer(int* ingredient)
+{
+	*ingredient = 5;
